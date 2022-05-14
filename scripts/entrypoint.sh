@@ -5,6 +5,15 @@ sudo service ssh start
 
 #sudo su $UNAME
 
+# load all all the bash profile scripts
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
 
 # fix permissions, is this desired?
 #chown -R 1000 /course
