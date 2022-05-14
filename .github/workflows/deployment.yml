@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: marshallasch/base-resources
+          images: marshallasch/base-resource
       - name: Set up QEMU
         id: qemu
         uses: docker/setup-qemu-action@v2
