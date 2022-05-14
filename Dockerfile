@@ -13,7 +13,7 @@ LABEL org.opencontainers.image.description="This image is a base that can be use
 ARG VERSION=v1.0.0
 LABEL org.opencontainers.image.version="$VERSION"
 
-ARG WIKI_VERSION=v2.5.276
+ARG WIKI_VERSION=v2.5.281
 ARG NODE_VERSION=16
 ARG JUPYTER_PORT=8888
 
