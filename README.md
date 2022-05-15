@@ -1,6 +1,6 @@
-[![Deployment](https://github.com/MarshallAsch/base-resources/actions/workflows/deployment.yml/badge.svg)](https://github.com/MarshallAsch/oo-resources/actions/workflows/deployment.yml)
-![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/marshallasch/base-resources?style=plastic)
-![Docker Pulls](https://img.shields.io/docker/pulls/marshallasch/base-resources?style=plastic)
+[![Deployment](https://github.com/MarshallAsch/base-resource/actions/workflows/deployment.yml/badge.svg)](https://github.com/MarshallAsch/base-resource/actions/workflows/deployment.yml)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/marshallasch/base-resource?style=plastic)
+![Docker Pulls](https://img.shields.io/docker/pulls/marshallasch/base-resource?style=plastic)
 
 
 This repository is responsible for building the base docker image that is used as a base for all the sci-oer language specific resources. 
