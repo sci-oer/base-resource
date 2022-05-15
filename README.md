@@ -1,5 +1,4 @@
 [![Deployment](https://github.com/sci-oer/base-resource/actions/workflows/deployment.yml/badge.svg)](https://github.com/sci-oer/base-resource/actions/workflows/deployment.yml)
-
 ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/marshallasch/base-resource?style=plastic)
 ![Docker Pulls](https://img.shields.io/docker/pulls/marshallasch/base-resource?style=plastic)
 
