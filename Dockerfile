@@ -55,8 +55,6 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     vim \
     nano \
     openssh-server \
-    nginx \
-    man \
     unzip \
     gcc \
     g++ \
@@ -67,6 +65,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     python-dev \
     pip \
     sudo \
+    libffi-dev \
 && rm -rf /var/lib/apt/lists/*
 
 RUN echo "${UNAME} ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/${UNAME} && \
@@ -79,7 +78,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - && \
 
 
 # install wikijs
-RUN wget https://github.com/Requarks/wiki/releases/download/${WIKI_VERSION}/wiki-js.tar.gz -P /tmp && \
+RUN curl -L https://github.com/Requarks/wiki/releases/download/${WIKI_VERSION}/wiki-js.tar.gz --output /tmp/wiki-js.tar.gz && \
     mkdir -p /opt/wiki/sideload && \
     tar xzf /tmp/wiki-js.tar.gz -C /opt/wiki && \
     rm /tmp/wiki-js.tar.gz
