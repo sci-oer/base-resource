@@ -3,11 +3,11 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/marshallasch/base-resource?style=plastic)
 
 
-This repository is responsible for building the base docker image that is used as a base for all the sci-oer language specific resources. 
-This will install and configure the wiki, jupyter lab, and setup all the tools that are not specific to one language. 
+This repository is responsible for building the base docker image that is used as a base for all the sci-oer language specific resources.
+This will install and configure the wiki, jupyter lab, and setup all the tools that are not specific to one language.
 
 
-This Docker image is not meant to be used directly, rather it is meant to be used as a base image for a language specific resource. 
+This Docker image is not meant to be used directly, rather it is meant to be used as a base image for a language specific resource.
 To create a language specific docker image create a docker file similar to the following to install the language specific dependencies:
 
 ```dockerfile
@@ -79,22 +79,22 @@ The jupyter notebooks site can be found at http://localhost:8888
 
 When you go to the jupyter notebooks page all of the builtin notebooks can be found in the `builtin` folder.
 All of the notebooks that are in the `builtin` folder are provided by the container, they can be modified and the modifications will be persistent as long as the same volume mount is used.
-If the volume is replaced then all the builtin notebooks will be replaced with fresh copies. 
+If the volume is replaced then all the builtin notebooks will be replaced with fresh copies.
 All of the notebooks that are created will be saved in the `course/jupyter/notebooks` directory.
 
 Any user settings that are changed (such as dark mode) will also be persistent.
 
 ### Java docs
 
-The javadocs for Java 11 have been built into this image and can be accessed at http://localhost:8000. 
+The javadocs for Java 11 have been built into this image and can be accessed at http://localhost:8000.
 
 ### ssh to work on files using external editor
 
-This container runs an ssh daemon and exposes port 22. 
-You can ssh into this container by running `ssh -p 2222 student@127.0.0.1`. 
+This container runs an ssh daemon and exposes port 22.
+You can ssh into this container by running `ssh -p 2222 student@127.0.0.1`.
 You do not need a password to ssh into the container, but the password is `password` for any command that needs it.
 
-Any files that are edited should be put in the `/course/work` directory to be saved to the volume mount. 
+Any files that are edited should be put in the `/course/work` directory to be saved to the volume mount.
 
 
 Although you are able to ssh into this container, it is preferred to attach additional terminals to the container directly.
@@ -109,7 +109,7 @@ The name of the container can be gotten by running `docker ps` or it can be spec
 ### How to configure custom wiki content
 
 Any built in content to be included in the wiki must be added manually.
-Unfortunately there is not currently an easy mechanism to automatically load markdown files from a directory into the wiki. 
+Unfortunately there is not currently an easy mechanism to automatically load markdown files from a directory into the wiki.
 
 To Load custom content into the container the following process is suggested:
 
@@ -141,19 +141,20 @@ tags: coma, separated, list
 
 ### How to configure builtin jupyter notebooks
 
-Adding built in jupyter notebooks to the container is simpler. 
+Adding built in jupyter notebooks to the container is simpler.
 Place all the desired files in the `builtinNotebooks` folder, then build the image.
 
 ### Startup message
 
 To change the startup message that gets printed when the container starts edit the text in `motd.txt` to include the desired text
 
-### Extending this container with custom container
+### Extending this container to be language specific
 
-This image is designed to be used as a base image to be loaded with custom content for specific course deliveries. 
+This image is designed to be used as a base image to be loaded with custom content for specific course deliveries.
 
-An example can be found in the `example` folder that will create an image with pre added jupyter notebooks and wiki configurations.
-The steps to create the wiki configuration is the same as that for this container. 
+The following list provides examples of customized version of the image:
+- a [java specific](https://github.com/sci-oer/java-resource) has been can be found here
+- a [C specific](https://github.com/sci-oer/c-resource) has been can be found here
 
 ## Software License
 
@@ -173,6 +174,4 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGkiOjEsImdycCI6MSwiaWF0IjoxNjQyOTcyMTk
 These are some of the tasks that can still be done to make it better
 
 - automatically generate an ssh keypair to be used for git
-- seed the wiki with some initial content
-- specify a specific version for jupyter
 - add bash completions for the main tools that have been installed
