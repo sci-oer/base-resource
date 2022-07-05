@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:jammy
 
 LABEL org.opencontainers.version="v1.0.0"
 
