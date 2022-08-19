@@ -129,4 +129,4 @@ ha: false
 # Data Path
 # ---------------------------------------------------------------------
 # Writeable data path used for cache and temporary user uploads.
-dataPath: /wiki_data
+dataPath: /course/wiki/data

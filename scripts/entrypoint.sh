@@ -29,7 +29,7 @@ fi
 
 # Setup directories in the potentially mounted volume
 LOGDIR="/course/logs"
-mkdir -p "/course/wiki" \
+mkdir -p "/course/wiki/data" \
         "/course/jupyter/notebooks/tutorials"  \
         "/course/coursework" \
         "/course/lectures" \
