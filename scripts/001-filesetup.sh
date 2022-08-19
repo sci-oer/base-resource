@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy the wiki database if it is not already there
-cp /opt/wiki/database.sqlite /course/wiki/database.sqlite
+cp -n -v /opt/wiki/database.sqlite /course/wiki/database.sqlite
 
 # Copy the builtin content to the mounted volume
 cp -n -r -u -v /builtin/jupyter/. /course/jupyter/notebooks/tutorials/

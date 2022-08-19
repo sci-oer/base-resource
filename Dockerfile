@@ -22,7 +22,7 @@ ENV DEBIAN_FRONTEND=noninteractive  \
     UNAME=student
 
 WORKDIR /course
-VOLUME [ "/course", "/wiki_data" ]
+VOLUME [ "/course" ]
 ENTRYPOINT [ "/scripts/entrypoint.sh" ]
 
 EXPOSE 3000
@@ -35,7 +35,6 @@ RUN useradd -m -s /bin/bash -u "${UID}" "${UNAME}" && \
     echo "${UNAME}:password" | chpasswd
 
 RUN mkdir -p \
-        /wiki_data \
         /builtin/jupyter \
         /builtin/coursework \
         /opt/static/lectures  \
@@ -102,7 +101,7 @@ COPY configs/jupyter_lab_config.py /opt/jupyter/jupyter_lab_config.py
 
 # copy all the builtin jupyter notebooks
 COPY builtinNotebooks /builtin/jupyter
-RUN chown -R ${UID}:${UID} /builtin /opt/static /course /opt/wiki /wiki_data
+RUN chown -R ${UID}:${UID} /builtin /opt/static /course /opt/wiki
 
 COPY scripts /scripts/
 COPY motd.txt /scripts/
