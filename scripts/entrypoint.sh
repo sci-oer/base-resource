@@ -32,7 +32,6 @@ LOGDIR="/course/logs"
 mkdir -p "/course/wiki/data" \
         "/course/jupyter/notebooks/tutorials"  \
         "/course/coursework" \
-        "/course/lectures" \
         "/course/practiceProblems" \
         "$LOGDIR"
 
