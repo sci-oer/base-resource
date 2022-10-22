@@ -43,6 +43,8 @@ EXPOSE 8000
 EXPOSE 8888
 EXPOSE 22
 
+HEALTHCHECK --start-period=20s --interval=30s --timeout=3s CMD /scripts/healthcheck.sh
+
 # create a 'normal' user so everything does not need to be run as root
 RUN useradd -m -s /bin/bash -u "${UID}" "${UNAME}" && \
     echo "${UNAME}:password" | chpasswd
