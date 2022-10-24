@@ -80,7 +80,14 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     libffi-dev \
     libxml2-dev \
     libxslt-dev \
+    locales \
 && rm -rf /var/lib/apt/lists/*
+
+# generate and use UTF-8 locale
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 RUN echo "${UNAME} ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/${UNAME} && \
     chmod 0440 /etc/sudoers.d/${UNAME}
