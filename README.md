@@ -25,7 +25,7 @@ RUN breakerx install java
 docker build \
     --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) \
     --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
-    -t marshallasch/base-resources:latest .
+    -t marshallasch/base-resource:latest .
 ```
 
 
@@ -38,7 +38,7 @@ docker run --rm -it \
     -p 2222:22 \
     -p 8000:8000 \
     -v "$(pwd)/course:/course" \
-    marshallasch/base-resources:latest
+    marshallasch/base-resource:latest
 ```
 
 This container is designed to be run in the foreground.
