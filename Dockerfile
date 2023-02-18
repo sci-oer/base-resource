@@ -17,7 +17,7 @@ ADD https://raw.githubusercontent.com/Requarks/wiki-localization/master/locales.
 
 
 
-FROM ubuntu:focal
+FROM ubuntu:jammy
 
 LABEL org.opencontainers.version="v1.0.0"
 
