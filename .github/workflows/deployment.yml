@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Setup the current date
         id: prep
-        run: echo "::set-output name=date::$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+        run: echo "date=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
@@ -26,6 +26,7 @@ jobs:
             type=semver,pattern={{version}}
             type=ref,event=branch
             type=ref,event=tag
+            type=sha
       - name: Set up QEMU
         id: qemu
         uses: docker/setup-qemu-action@v2
@@ -42,7 +43,7 @@ jobs:
         run: echo ${{ steps.qemu.outputs.platforms }}
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
           tags: ${{ steps.meta.outputs.tags }}

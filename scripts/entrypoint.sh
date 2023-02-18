@@ -35,7 +35,7 @@ mkdir -p "/course/wiki/data" \
         "/course/practiceProblems" \
         "$LOGDIR"
 
-GLOBIGNORE="*.async.sh:/scripts/entrypoint.sh"
+GLOBIGNORE="*.async.sh:/scripts/entrypoint.sh:/scripts/healthcheck.sh"
 for file in /scripts/*.sh; do
   case "$file" in
        *.async.sh ) continue;;
@@ -45,7 +45,7 @@ for file in /scripts/*.sh; do
   ( $file > $LOGDIR/$base-out.log 2> $LOGDIR/$base-err.log )
 done
 
-GLOBIGNORE="/scripts/entrypoint.sh"
+GLOBIGNORE="/scripts/entrypoint.sh:/scripts/healthcheck.sh"
 for file in /scripts/*.async.sh; do
   base=$(basename $file .sh)
 
