@@ -1,6 +1,6 @@
 
 FROM alpine:latest AS wikijs
-ARG WIKI_VERSION=v2.5.285
+ARG WIKI_VERSION=v2.5.297
 
 # install wikijs
 RUN wget https://github.com/Requarks/wiki/releases/download/${WIKI_VERSION}/wiki-js.tar.gz -O /tmp/wiki-js.tar.gz && \
