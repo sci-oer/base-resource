@@ -1,6 +1,6 @@
 [![Deployment](https://github.com/sci-oer/base-resource/actions/workflows/deployment.yml/badge.svg)](https://github.com/sci-oer/base-resource/actions/workflows/deployment.yml)
-![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/marshallasch/base-resource?style=plastic)
-![Docker Pulls](https://img.shields.io/docker/pulls/marshallasch/base-resource?style=plastic)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/scioer/base-resource?style=plastic)
+![Docker Pulls](https://img.shields.io/docker/pulls/scioer/base-resource?style=plastic)
 
 
 This repository is responsible for building the base docker image that is used as a base for all the sci-oer language specific resources.
@@ -25,7 +25,7 @@ RUN breakerx install java
 docker build \
     --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) \
     --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
-    -t marshallasch/base-resource:latest .
+    -t scioer/base-resource:latest .
 ```
 
 
@@ -38,7 +38,7 @@ docker run --rm -it \
     -p 2222:22 \
     -p 8000:8000 \
     -v "$(pwd)/course:/course" \
-    marshallasch/base-resource:latest
+    scioer/base-resource:latest
 ```
 
 This container is designed to be run in the foreground.
@@ -62,7 +62,7 @@ docker run -it --rm \
     -p 8000:8000 \
     -e GIT_EMAIL='student@example.com' \
     -e GIT_NAME="My StudentName" \
-    marshallasch/base-resource:latest
+    scioer/base-resource:latest
 ```
 
 ### Wiki
@@ -113,7 +113,7 @@ Unfortunately there is not currently an easy mechanism to automatically load mar
 
 To Load custom content into the container the following process is suggested:
 
-1. Start the container _with_ the volume mount `docker run -it --rm -v "$(pwd)/course:/course" marshallasch/base-resource:latest`
+1. Start the container _with_ the volume mount `docker run -it --rm -v "$(pwd)/course:/course" scioer/base-resource:latest`
 2. Go to http://localhost:3000 and create all of the desired wiki pages and configurations
 3. Exit the container
 4. Replace the `database.sqlite` file with the new one from `course/wiki/database.sqlite`
@@ -131,7 +131,7 @@ isPublished: 1
 tags: coma, separated, list
 ---
 ```
-3. Start the container _with_ the volume mount `docker run -it --rm -v "$(pwd)/course:/course" marshallasch/base-resource:latest`
+3. Start the container _with_ the volume mount `docker run -it --rm -v "$(pwd)/course:/course" scioer/base-resource:latest`
 4. Go to http://localhost:3000 and navigate to Administration > Storage > Local File System
 5. Enable local file storage, set the Path to `/course/wiki/files`
 6. Scroll to the bottom of the page and run `Import Everything`, now all of the wiki pages should be imported
