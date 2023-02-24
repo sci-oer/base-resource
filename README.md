@@ -1,7 +1,7 @@
 [![Deployment](https://github.com/sci-oer/base-resource/actions/workflows/deployment.yml/badge.svg)](https://github.com/sci-oer/base-resource/actions/workflows/deployment.yml)
 ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/scioer/base-resource?style=plastic)
 ![Docker Pulls](https://img.shields.io/docker/pulls/scioer/base-resource?style=plastic)
-
+![GitHub](https://img.shields.io/github/license/sci-oer/base-resource?style=plastic)
 
 This repository is responsible for building the base docker image that is used as a base for all the sci-oer language specific resources.
 This will install and configure the wiki, jupyter lab, and setup all the tools that are not specific to one language.
