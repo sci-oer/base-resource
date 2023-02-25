@@ -22,12 +22,13 @@ FROM ubuntu:focal
 LABEL org.opencontainers.version="v1.0.0"
 
 LABEL org.opencontainers.image.authors="Marshall Asch <masch@uoguelph.ca> (https://marshallasch.ca)"
-LABEL org.opencontainers.image.url="https://github.com/sci-oer/base-resources.git"
 LABEL org.opencontainers.image.source="https://github.com/sci-oer/base-resources.git"
-LABEL org.opencontainers.image.vendor="University of Guelph School of Computer Science"
+LABEL org.opencontainers.image.vendor="sci-oer"
 LABEL org.opencontainers.image.licenses="GPL-3.0-only"
 LABEL org.opencontainers.image.title="Offline Course Resouce"
 LABEL org.opencontainers.image.description="This image is a base that can be used to act as an offline resource for students to contain all the instructional matrial and tools needed to do the course content"
+LABEL org.opencontainers.image.base.name="registry-1.docker.io/ubuntu:focal"
+
 
 ENV DEBIAN_FRONTEND=noninteractive  \
     TERM=xterm-256color \
