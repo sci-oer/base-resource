@@ -1,4 +1,4 @@
 jupyter==1.0.0
 jupyterlab==3.6.1
-ipykernel==6.21.2
+ipykernel==6.29.4
 beakerx==2.3.13
